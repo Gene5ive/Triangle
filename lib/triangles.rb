@@ -13,4 +13,8 @@ class Triangle
   define_method(:isosceles) do
     @side_a == @side_b || @side_b == @side_c || @side_c == @side_a
   end
+
+  define_method(:scalene) do
+    :equal == false
+  end
 end
