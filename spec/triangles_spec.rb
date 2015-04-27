@@ -19,7 +19,14 @@ describe(Triangle) do
   describe("#scalene") do
     it("returns true if no side are equal") do
       test_triangle = Triangle.new(3,4,5)
-      expect(test_triangle.scalene)
+      expect(test_triangle.scalene).to(eq(true))
+    end
+  end
+
+  describe('#not') do
+    it("returns true if one side is at least as long as the other two combined") do
+      test_triangle = Triangle.new(3,3,6)
+      expect(test_triangle.not).to(eq(true))
     end
   end
 end
