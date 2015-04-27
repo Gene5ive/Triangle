@@ -1,3 +1,4 @@
+require 'pry'
 require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
@@ -13,14 +14,6 @@ get('/triangles') do
   side_c = params.fetch('side_c')
 
   user_triangle = Triangle.new(side_a, side_b, side_c)
-    if user_triangle == Triangle.scalene
-      @triangle = user_triangle
-    elsif user_triangle == Triangle.equal
-        @triangle = user_triangle
-    elsif user_triangle == Triangle.isosceles
-        @triangle = user_triangle
-    else user_triangle == Triangle.not_triangle
-        @triangle = user_triangle
-  end
+  @triangle = user_triangle.triangle_type
   erb(:triangles)
 end
