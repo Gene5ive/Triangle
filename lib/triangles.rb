@@ -7,6 +7,12 @@ class Triangle
   end
 
   define_method(:triangle_type) do
+    unless
+       @side_a + @side_b > @side_c &&
+       @side_b + @side_c > @side_a &&
+       @side_c + @side_a > @side_b
+       "Not a triangle"
+    else
       if
         @side_a == @side_b &&
         @side_b == @side_c
@@ -25,15 +31,3 @@ class Triangle
     end
   end
 end
-
-
-#if side_a == side_b
-  #not
-  #equal
-  #iso
-  #if side_b == side_c
-    #equalateral
-  #elsif side_b != side_c
-    #not
-    #iso
-    #if

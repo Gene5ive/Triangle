@@ -1,8 +1,7 @@
-require 'pry'
 require('sinatra')
 require('sinatra/reloader')
-also_reload('lib/**/*.rb')
 require('./lib/triangles')
+also_reload('lib/**/*.rb')
 
 get('/') do
   erb(:index)
